@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react'
 import { SearchResult } from '@/components/searchModule/searchResult/SearchResult'
 import { SearchFilter } from '@/components/searchModule/searchFilter/SearchFilter'
 
-function SearchModule({ initialValues }) {
+function SearchModule({ initialValues }: any) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState(initialValues)
   const regions = [
     ...new Set(
-      initialValues.map((result) => {
+      initialValues.map((result: any) => {
         return result.region
       })
     ),
@@ -21,7 +21,7 @@ function SearchModule({ initialValues }) {
       return
     }
 
-    const value = initialValues.filter((country) => {
+    const value = initialValues.filter((country: any) => {
       const officialName = country.name.official.toLowerCase()
       return officialName.includes(query.toLowerCase())
     })
@@ -29,9 +29,9 @@ function SearchModule({ initialValues }) {
     value.length > 0 && setResults(value)
   }, [initialValues, query])
 
-  function handleFilterChange(value) {
+  function handleFilterChange(value: any) {
     const filterValue = value.target.outerText
-    const results = initialValues.filter((country) => {
+    const results = initialValues.filter((country: any) => {
       return country.region === filterValue
     })
     setResults(results)
@@ -64,7 +64,7 @@ function SearchModule({ initialValues }) {
           'SearchModule-results grid gap-10 lg:gap-[74px] md:grid-cols-2 lg:grid-cols-4'
         }
       >
-        {results.map((country, index) => {
+        {results.map((country: any, index: number) => {
           return <SearchResult value={country} key={index} />
         })}
       </div>

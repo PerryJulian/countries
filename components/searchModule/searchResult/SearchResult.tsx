@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './SearchResultStyles.module.scss'
 
-function SearchResult({ value }) {
+function SearchResult({ value }: any) {
   const { name, population, region, capital, flags } = value
   const formatedPopulation = Number(population).toLocaleString('en-US')
 
