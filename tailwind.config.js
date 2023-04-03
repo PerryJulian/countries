@@ -17,7 +17,11 @@ module.exports = {
         dark: '#2B3844',
       },
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        button: '0px 0px 7px rgba(0, 0, 0, 0.293139)',
+      },
+    },
   },
   plugins: [],
 }

@@ -26,9 +26,13 @@ function SearchFilter({ filterValues, onClick }: SearchFilterProps) {
           {filterValues.map((filter: any, index: number) => {
             return (
               <Menu.Item key={index}>
-                <div key={index} onClick={onClick} className={'mb-2 text-xs'}>
+                <a
+                  key={index}
+                  onClick={onClick}
+                  className={'mb-2 block text-xs'}
+                >
                   {filter}
-                </div>
+                </a>
               </Menu.Item>
             )
           })}
